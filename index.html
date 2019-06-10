@@ -1,0 +1,88 @@
+﻿<html>
+<head>
+  <title>Вход и регистрация</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="login_div" class="main-div">
+    <h3>Здравствуйте!<br> Вас приветствует портал принятия жалоб! <br><br> Пожалуйста введите логин и пароль:</h3>
+    <input type="email" placeholder="Email..." id="email_field"/>
+    <input type="password" placeholder="Password..." id="password_field" />
+
+    <button onclick="login()">Войти в учетную запись</button></br>
+	<button onclick="register()">Регистрация пользователя</button></br>
+
+  </div>
+
+  <div id="name_div" class="name-div">
+    <h3>Регистрация</h3>
+    <input type="email" placeholder="Email..." id="email_field" />
+    <input type="password" placeholder="Password..." id="password_field" />
+	
+    <button onclick="login()">Сохранить</button>
+
+  </div>
+
+  <div id="user_div" class="loggedin-div">
+    <h3>Здравствуйте!</h3>
+    <p id="user_para">Добро пожаловать! Вы вошли в систему.</p>
+    
+  <section id="four">
+  <div class="container" id="contactForm">
+    <h3>Если у вас есть какая-либо жалоба, мы готовы ее рассмотреть!</h3>
+    <p>Для связи воспользуйтесь следующей формой:</p>
+    <form method="post" action="#">
+      <div class="row uniform">
+        <div class="6u 12u(xsmall)"><input type="text" name="name" id="contactName" placeholder="Имя пользователя ..." /></div>
+        <div class="6u 12u(xsmall)"><input type="email" name="email" id="contactEmail" placeholder="Запасной Email ..." /></div>
+      </div>
+      <div class="row uniform">
+        <div class="12u"><input type="text" name="subject" id="contactSubject" placeholder="Жалоба на ..." /></div>
+      </div>
+      <div class="row uniform">
+        <div class="12u"><input name="message" id="contactMessage" placeholder="Сообщение" rows="6"></div>
+      </div>
+      <div class="row uniform">
+        <div class="12u">
+          </br><button type="submit" class="special" value="Отправить сообщение" onclick="return saveToFirebase(event)" id="contactSendButton">Отправить 
+
+сообщение</button></br>
+            <button type="reset" value="Сбросить" id="contactResetButton">Сбросить</button>
+      
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="container" id="contactResult"></div>
+</section>
+
+    
+    
+<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+    
+  <a href=index.html><button onclick="logout()">Выход из системы</button></a>
+  </div>
+
+
+
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAj8XtY-uUCt7QizTl-LEsxzx9d9U8Do9o",
+    authDomain: "login-and-registration-5e266.firebaseapp.com",
+    databaseURL: "https://login-and-registration-5e266.firebaseio.com",
+    projectId: "login-and-registration-5e266",
+    storageBucket: "login-and-registration-5e266.appspot.com",
+    messagingSenderId: "45452621858",
+    appId: "1:45452621858:web:0f73084e0d8821a8"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+  <script src="index.js"></script>
+
+</body>
+</html>
